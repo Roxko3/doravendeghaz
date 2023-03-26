@@ -1,14 +1,16 @@
 <template>
   <v-app class="page">
-    <v-app-bar title="Dóra Vendégház Kőszeg"
-      ><v-row
-        ><v-col
-          ><router-link to="/">Kezdő oldal</router-link>
-          <router-link to="/about">Térkép</router-link> <a>Elérhetőség</a>
-          <a>Árak</a> <a> Kedvezmények</a></v-col
-        ></v-row
-      ></v-app-bar
-    >
+    <v-app-bar title="Dóra Vendégház Kőszeg">
+      <v-list density="compact">
+        <router-link to="/"
+          ><v-list-item title="Kezdő oldal"></v-list-item
+        ></router-link>
+        <router-link to="/about"
+          ><v-list-item title="Térkép"></v-list-item
+        ></router-link>
+        <a>Elérhetőség</a> <a>Árak</a> <a> Kedvezmények</a>
+      </v-list>
+    </v-app-bar>
     <RouterView />
     <v-footer class="footer">
       <v-row
