@@ -1,16 +1,12 @@
 <template>
-  <v-app class="page">
-    <v-app-bar title="Dóra Vendégház Kőszeg">
-      <v-list density="compact">
-        <router-link to="/"
-          ><v-list-item title="Kezdő oldal"></v-list-item
-        ></router-link>
-        <router-link to="/about"
-          ><v-list-item title="Térkép"></v-list-item
-        ></router-link>
+  <!--<v-app class="page">
+    <div>
+      <v-app-bar title="Dóra Vendégház Kőszeg">
+        <router-link to="/">Kezdő oldal </router-link>
+        <router-link to="/about">Térkép </router-link>
         <a>Elérhetőség</a> <a>Árak</a> <a> Kedvezmények</a>
-      </v-list>
-    </v-app-bar>
+      </v-app-bar>
+    </div>
     <RouterView />
     <v-footer class="footer">
       <v-row
@@ -33,7 +29,8 @@
         </v-col>
       </v-row>
     </v-footer>
-  </v-app>
+  </v-app>-->
+  <RouterView />
 </template>
 
 <script setup>
@@ -45,7 +42,7 @@ import { RouterLink, RouterView } from "vue-router";
   background-image: url("../../public/haz.jpg");
 }
 .footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
