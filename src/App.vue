@@ -54,8 +54,8 @@
           <v-col>
             <router-link to="/"><v-btn>Kezdő oldal</v-btn></router-link>
             <router-link to="/map"><v-btn>Térkép</v-btn></router-link>
-            <router-link to="/"><v-btn>Elérhetőség</v-btn></router-link>
-            <router-link to="/"><v-btn>Árak</v-btn></router-link>
+            <router-link to="/contact"><v-btn>Elérhetőség</v-btn></router-link>
+            <router-link to="/prices"><v-btn>Árak</v-btn></router-link>
             <router-link to="/images"><v-btn>Képek</v-btn></router-link>
           </v-col>
         </v-row>
@@ -165,6 +165,7 @@ export default defineComponent({
   background-image: url("../../public/wood.jpg");
   background-size: cover;
   border-radius: 15px;
+  border-style: outset;
   height: 40px;
 }
 .c4 {
