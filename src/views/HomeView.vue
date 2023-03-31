@@ -1,5 +1,5 @@
 <template>
-  <!--Kőszeg belvárosában 1767-ben épült műemlék épületben a földszinten lett
+  Kőszeg belvárosában 1767-ben épült műemlék épületben a földszinten lett
   kialakítva egy 50m² -es apartman, mely két egybenyíló boltíves szobából,
   felszerelt konyhából ( kávé főző, mikró,hűtő vízforraló,elektromos tűzhely
   stb. ) fürdőből, kis étkezőből áll. Az apartmanunk egyszerre 4-fő számára
@@ -9,23 +9,7 @@
   alkalmazkodni másokhoz. Az érkezést-távozást rugalmasan kezeljük, ahogy a
   foglalások lehetővé teszik. Autóval érkező vendégeinknek ingyenes
   parkolóbérletet biztosítunk.
-  <img src="../../public/haz.jpg" />-->
-  <v-carousel show-arrows="hover" hide-delimiters>
-    <v-carousel-item
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-      cover
-    ></v-carousel-item>
-
-    <v-carousel-item
-      src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-      cover
-    ></v-carousel-item>
-
-    <v-carousel-item
-      src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-      cover
-    ></v-carousel-item>
-  </v-carousel>
+  <img src="../../public/haz.jpg" />
 </template>
 
 <script setup></script>

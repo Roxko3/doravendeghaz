@@ -52,10 +52,11 @@
       <v-col sm="8" class="c2">
         <v-row v-if="true">
           <v-col>
-            <v-btn v-on:click="openDialog">Kezdő oldal</v-btn>
-            <v-btn>Térkép</v-btn>
-            <v-btn>Elérhetőség</v-btn>
-            <v-btn>Árak</v-btn>
+            <router-link to="/"><v-btn>Kezdő oldal</v-btn></router-link>
+            <router-link to="/map"><v-btn>Térkép</v-btn></router-link>
+            <router-link to="/"><v-btn>Elérhetőség</v-btn></router-link>
+            <router-link to="/"><v-btn>Árak</v-btn></router-link>
+            <router-link to="/images"><v-btn>Képek</v-btn></router-link>
           </v-col>
         </v-row>
         <v-row v-else>
@@ -92,7 +93,7 @@
     </v-row>
   </div>
 
-  <v-dialog v-model="isOpen" class="dialog">
+  <v-dialog v-model="isOpen" class="dialog" width="auto">
     <img src="../public/adjpg.jpg" />
     Kedvezményezett neve: Dóráné Gyarmati Tünde Támogatási projekt címe:
     Kisfaludy Szálláshelyfejlesztési Konstukció - magánszálláshelyek és egyéb
