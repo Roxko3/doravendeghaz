@@ -51,7 +51,7 @@
       <v-col class="c1 img" sm="1"></v-col>
       <v-col sm="8" class="c2">
         <v-row>
-          <v-col v-if="true" align="center">
+          <v-col v-if="false" align="center">
             <router-link to="/"
               ><v-btn class="active">Kezdő oldal</v-btn></router-link
             >
@@ -60,13 +60,32 @@
             <router-link to="/prices"><v-btn>Árak</v-btn></router-link>
             <router-link to="/images"><v-btn>Képek</v-btn></router-link>
           </v-col>
-          <v-col v-else>
-            <v-btn v-on:click="openDrawer">nav</v-btn>
+          <v-col v-else class="tab">
+            <v-tabs
+              v-model="tab"
+              bg-color="primary"
+              align-tabs="center"
+              fixed-tabs
+            >
+              <v-tab value="home">Kezdő oldal</v-tab>
+              <v-tab value="map">Térkép</v-tab>
+              <v-tab value="price">Árak</v-tab>
+              <v-tab value="image">Képek</v-tab>
+              <v-tab value="contact">Elérhetőség</v-tab>
+            </v-tabs>
           </v-col>
         </v-row>
         <v-row>
           <v-col>
-            <RouterView />
+            <v-window v-model="tab">
+              <v-window-item value="home"> <Home /> </v-window-item>
+
+              <v-window-item value="map"> <Map /> </v-window-item>
+
+              <v-window-item value="price"> <Image /> </v-window-item>
+              <v-window-item value="image"> <Contact /> </v-window-item>
+              <v-window-item value="contact"> <Prices /> </v-window-item>
+            </v-window>
           </v-col> </v-row
       ></v-col>
       <v-col class="c1 img" sm="1"></v-col>
@@ -106,13 +125,26 @@
 <script>
 import { defineComponent } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+import Home from "./components/Home.vue";
+import Map from "./components/Map.vue";
+import Image from "./components/Image.vue";
+import Contact from "./components/Contact.vue";
+import Prices from "./components/Prices.vue";
 
 export default defineComponent({
   name: "App",
+  components: {
+    Home,
+    Map,
+    Image,
+    Contact,
+    Prices,
+  },
   data() {
     return {
       isOpen: false,
       drawer: false,
+      tab: null,
     };
   },
   methods: {
@@ -127,6 +159,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.tab {
+  padding: 0;
+}
 .active {
   background: red;
 }
