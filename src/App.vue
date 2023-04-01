@@ -51,7 +51,7 @@
       <v-col class="c1 img" sm="1"></v-col>
       <v-col sm="8" class="c2">
         <v-row>
-          <v-col v-if="false" align="center">
+          <!--<v-col v-if="false" align="center">
             <router-link to="/"
               ><v-btn class="active">Kezdő oldal</v-btn></router-link
             >
@@ -59,20 +59,33 @@
             <router-link to="/contact"><v-btn>Elérhetőség</v-btn></router-link>
             <router-link to="/prices"><v-btn>Árak</v-btn></router-link>
             <router-link to="/images"><v-btn>Képek</v-btn></router-link>
-          </v-col>
-          <v-col v-else class="tab">
-            <v-tabs
-              v-model="tab"
-              bg-color="primary"
-              align-tabs="center"
-              fixed-tabs
+          </v-col>-->
+          <v-col class="tab">
+            <v-btn v-if="isMobile" v-on:click="btnClick" block
+              >Navigáció<v-icon>{{
+                tabOpen ? "mdi-chevron-up" : "mdi-chevron-down"
+              }}</v-icon></v-btn
             >
-              <v-tab value="home">Kezdő oldal</v-tab>
-              <v-tab value="map">Térkép</v-tab>
-              <v-tab value="price">Árak</v-tab>
-              <v-tab value="image">Képek</v-tab>
-              <v-tab value="contact">Elérhetőség</v-tab>
-            </v-tabs>
+            <v-expand-transition>
+              <v-tabs
+                v-model="tab"
+                bg-color="primary"
+                grow
+                :direction="dir"
+                show-arrows
+                v-if="tabOpen || !isMobile"
+              >
+                <v-tab value="home"
+                  >Kezdő oldal <v-icon icon="mdi-home"
+                /></v-tab>
+                <v-tab value="map">Térkép <v-icon icon="mdi-map" /></v-tab>
+                <v-tab value="price">Árak <v-icon icon="mdi-cash" /></v-tab>
+                <v-tab value="image">Képek <v-icon icon="mdi-image" /></v-tab>
+                <v-tab value="contact"
+                  >Elérhetőség <v-icon icon="mdi-contacts"
+                /></v-tab>
+              </v-tabs>
+            </v-expand-transition>
           </v-col>
         </v-row>
         <v-row>
@@ -145,14 +158,53 @@ export default defineComponent({
       isOpen: false,
       drawer: false,
       tab: null,
+      windowWidth: window.innerWidth,
+      isMobile: null,
+      dir: null,
+      tabOpen: null,
+      arrowIcon: null,
     };
   },
+  mounted() {
+    if (this.windowWidth < 600) {
+      this.isMobile = true;
+      this.dir = "vertical";
+    } else {
+      this.isMobile = false;
+      this.dir = "horizontal";
+    }
+    this.$nextTick(() => {
+      window.addEventListener("resize", this.onResize);
+    });
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.onResize);
+  },
   methods: {
+    onResize() {
+      this.windowWidth = window.innerWidth;
+    },
     openDialog() {
       this.isOpen = true;
     },
     openDrawer() {
       this.drawer = true;
+    },
+    btnClick() {
+      this.tabOpen = !this.tabOpen;
+    },
+  },
+  watch: {
+    windowWidth: {
+      handler() {
+        if (this.windowWidth < 600) {
+          this.isMobile = true;
+          this.dir = "vertical";
+        } else {
+          this.isMobile = false;
+          this.dir = "horizontal";
+        }
+      },
     },
   },
 });
