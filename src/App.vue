@@ -50,27 +50,18 @@
       <v-col class="c4" sm="1"></v-col>
       <v-col class="c1 img" sm="1"></v-col>
       <v-col sm="8" class="c2">
-        <v-row v-if="true">
-          <v-col>
-            <router-link to="/"><v-btn>Kezdő oldal</v-btn></router-link>
+        <v-row>
+          <v-col v-if="true" align="center">
+            <router-link to="/"
+              ><v-btn class="active">Kezdő oldal</v-btn></router-link
+            >
             <router-link to="/map"><v-btn>Térkép</v-btn></router-link>
             <router-link to="/contact"><v-btn>Elérhetőség</v-btn></router-link>
             <router-link to="/prices"><v-btn>Árak</v-btn></router-link>
             <router-link to="/images"><v-btn>Képek</v-btn></router-link>
           </v-col>
-        </v-row>
-        <v-row v-else>
-          <v-col>
-            <v-expansion-panels>
-              <v-expansion-panel title="Title">
-                <v-expansion-panel-text
-                  ><v-btn>Kezdő oldal</v-btn>
-                  <v-btn>Térkép</v-btn>
-                  <v-btn>Elérhetőség</v-btn>
-                  <v-btn>Árak</v-btn></v-expansion-panel-text
-                >
-              </v-expansion-panel>
-            </v-expansion-panels>
+          <v-col v-else>
+            <v-btn v-on:click="openDrawer">nav</v-btn>
           </v-col>
         </v-row>
         <v-row>
@@ -105,6 +96,11 @@
     A támogatott projekt a Kisfaludy Turisztika Fejlesztési program keretében
     valósul meg”
   </v-dialog>
+  <v-layout>
+    <v-navigation-drawer v-model="drawer" location="top" temporary>
+      asd
+    </v-navigation-drawer>
+  </v-layout>
 </template>
 
 <script>
@@ -116,17 +112,24 @@ export default defineComponent({
   data() {
     return {
       isOpen: false,
+      drawer: false,
     };
   },
   methods: {
     openDialog() {
       this.isOpen = true;
     },
+    openDrawer() {
+      this.drawer = true;
+    },
   },
 });
 </script>
 
 <style scoped>
+.active {
+  background: red;
+}
 .dialog {
   background-image: url("../public/tornpaper.png");
   background-size: cover;
