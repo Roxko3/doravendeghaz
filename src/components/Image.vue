@@ -1,5 +1,6 @@
 <template>
   <v-carousel
+    v-model="number"
     show-arrows="hover"
     hide-delimiters
     cycle
@@ -20,6 +21,8 @@
       cover
     ></v-carousel-item>
   </v-carousel>
+
+  <v-overlay v-model="overlay"><img src="../../public/haz.jpg" /></v-overlay>
 </template>
 
 <script>
@@ -28,11 +31,20 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Image",
   data() {
-    return {};
+    return {
+      number: null,
+      overlay: null,
+    };
   },
   methods: {
     check(event) {
-      console.log(event.target.src);
+      if (event.target.src === undefined) {
+        console.log("nincs");
+      } else {
+        this.overlay = true;
+        console.log(this.number);
+        console.log(event.target.src);
+      }
     },
   },
 });

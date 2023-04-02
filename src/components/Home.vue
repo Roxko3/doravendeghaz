@@ -1,6 +1,6 @@
 <template>
   <v-row class="justify-center">
-    <v-col cols="12" lg="4" md="6" sm="8" class="text-body-1">
+    <v-col cols="12" lg="6" md="8" sm="9" class="text-body-1">
       Kőszeg belvárosában 1767-ben épült műemlék épületben a földszinten lett
       kialakítva egy 50m² -es apartman, mely két egybenyíló boltíves szobából,
       felszerelt konyhából ( kávé főző, mikró,hűtő vízforraló,elektromos tűzhely
