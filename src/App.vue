@@ -95,9 +95,9 @@
 
               <v-window-item value="map"> <Map /> </v-window-item>
 
-              <v-window-item value="price"> <Image /> </v-window-item>
-              <v-window-item value="image"> <Contact /> </v-window-item>
-              <v-window-item value="contact"> <Prices /> </v-window-item>
+              <v-window-item value="price"> <Prices /></v-window-item>
+              <v-window-item value="image"> <Image /> </v-window-item>
+              <v-window-item value="contact"> <Contact /></v-window-item>
             </v-window>
           </v-col> </v-row
       ></v-col>
@@ -272,7 +272,7 @@ export default defineComponent({
 
   width: 100%;
   height: 100%;
-  background-image: url("../../public/koszeg.jpg");
+  background-image: url("../../public/haz.jpg");
   background-size: cover;
 
   overflow: hidden;

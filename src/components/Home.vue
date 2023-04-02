@@ -1,16 +1,18 @@
 <template>
-  <p>
-    Kőszeg belvárosában 1767-ben épült műemlék épületben a földszinten lett
-    kialakítva egy 50m² -es apartman, mely két egybenyíló boltíves szobából,
-    felszerelt konyhából ( kávé főző, mikró,hűtő vízforraló,elektromos tűzhely
-    stb. ) fürdőből, kis étkezőből áll. Az apartmanunk egyszerre 4-fő számára
-    biztosít kényelmes pihenést. Januártól - decemberig várjuk kedves
-    vendégeinket. Télen központi fűtés gondoskodik az Ön kényelméről, amit Ön
-    szabályozhat felár nélkül. Nálunk nincsenek közös helységek, nem kell
-    alkalmazkodni másokhoz. Az érkezést-távozást rugalmasan kezeljük, ahogy a
-    foglalások lehetővé teszik. Autóval érkező vendégeinknek ingyenes
-    parkolóbérletet biztosítunk.
-  </p>
+  <v-row class="justify-center">
+    <v-col cols="12" lg="4" md="6" sm="8" class="text-body-1">
+      Kőszeg belvárosában 1767-ben épült műemlék épületben a földszinten lett
+      kialakítva egy 50m² -es apartman, mely két egybenyíló boltíves szobából,
+      felszerelt konyhából ( kávé főző, mikró,hűtő vízforraló,elektromos tűzhely
+      stb. ) fürdőből, kis étkezőből áll. Az apartmanunk egyszerre 4-fő számára
+      biztosít kényelmes pihenést. Januártól - decemberig várjuk kedves
+      vendégeinket. Télen központi fűtés gondoskodik az Ön kényelméről, amit Ön
+      szabályozhat felár nélkül. Nálunk nincsenek közös helységek, nem kell
+      alkalmazkodni másokhoz. Az érkezést-távozást rugalmasan kezeljük, ahogy a
+      foglalások lehetővé teszik. Autóval érkező vendégeinknek ingyenes
+      parkolóbérletet biztosítunk.
+    </v-col>
+  </v-row>
   <!--<img src="../../public/haz.jpg" />
     <img src="../../public/adjpg.jpg" />
     <p>
