@@ -31,7 +31,7 @@
     </v-footer>
   </v-app>-->
   <div class="div">
-    <v-row class="title justify-center">
+    <v-row class="title">
       <v-col>
         <h1>Dóra Vendégház Kőszeg</h1>
       </v-col>
@@ -91,13 +91,13 @@
         <v-row>
           <v-col>
             <v-window v-model="tab">
-              <v-window-item value="home"> <Home /> </v-window-item>
-
-              <v-window-item value="map"> <Map /> </v-window-item>
-
-              <v-window-item value="price"> <Prices /></v-window-item>
-              <v-window-item value="image"> <Image /> </v-window-item>
-              <v-window-item value="contact"> <Contact /></v-window-item>
+              <v-window-item value="home" class="h"> <Home /> </v-window-item>
+              <v-window-item value="map" class="h"> <Map /> </v-window-item>
+              <v-window-item value="price" class="h"> <Prices /></v-window-item>
+              <v-window-item value="image" class="h"> <Image /> </v-window-item>
+              <v-window-item value="contact" class="h">
+                <Contact
+              /></v-window-item>
             </v-window>
           </v-col> </v-row
       ></v-col>
@@ -211,6 +211,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.h {
+  height: 70vh;
+}
 .tab {
   padding: 0;
 }
@@ -233,11 +236,12 @@ export default defineComponent({
   color: white;
 }
 .title {
-  width: 0;
+  text-align: center;
+  /*width: 0;
   height: 0;
   border-left: 800px solid transparent;
   border-right: 800px solid transparent;
-  border-bottom: 150px solid #666;
+  border-bottom: 150px solid #666;*/
 }
 
 .img {
