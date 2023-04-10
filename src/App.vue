@@ -31,9 +31,9 @@
     </v-footer>
   </v-app>-->
   <div class="div">
-    <v-row class="title">
-      <v-col>
-        <h1>Dóra Vendégház Kőszeg</h1>
+    <v-row class="justify-center">
+      <v-col sm="10" cols="12" class="pb-0 mt-2">
+        <div class="title text-h4">Dóra Vendégház Kőszeg</div>
       </v-col>
     </v-row>
     <v-row class="r justify-center">
@@ -237,11 +237,11 @@ export default defineComponent({
 }
 .title {
   text-align: center;
-  /*width: 0;
+  border-style: solid;
   height: 0;
-  border-left: 800px solid transparent;
-  border-right: 800px solid transparent;
-  border-bottom: 150px solid #666;*/
+  width: 100%;
+  border-color: transparent transparent rgb(129, 63, 63) transparent;
+  border-width: 0 45px 45px 45px;
 }
 
 .img {

@@ -5,6 +5,7 @@
     hide-delimiters
     cycle
     v-on:click="check($event)"
+    height="100%"
   >
     <v-carousel-item
       src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
