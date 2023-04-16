@@ -1,12 +1,5 @@
 <template>
-  <v-carousel
-    v-model="number"
-    show-arrows="hover"
-    hide-delimiters
-    cycle
-    v-on:click="check($event)"
-    height="100%"
-  >
+  <v-carousel v-model="number" cycle v-on:click="check($event)" height="100%">
     <v-carousel-item
       v-for="image in images"
       :src="image"
@@ -14,7 +7,7 @@
     ></v-carousel-item>
   </v-carousel>
 
-  <v-overlay v-model="overlay" class="justify-center align-center" width="90vw">
+  <v-overlay v-model="overlay" class="justify-center align-center">
     <!--<v-row>
       <v-carousel>
         <v-carousel-item
@@ -33,19 +26,15 @@
         ></v-carousel-item>
       </v-carousel>
     </v-row>-->
-    <v-row>
-      <v-col sm="1" cols="1">
-        <v-btn v-on:click="previous()" icon="mdi-chevron-left"></v-btn></v-col
-      ><v-col sm="10" cols="10">
-        <v-img
-          :src="this.images[this.index]"
-          width="60vw"
-          aspect-radio="16/9" /></v-col
-      ><v-col sm="1" cols="1"
-        ><v-btn
-          v-on:click="next()"
-          icon="mdi-chevron-right"
-        ></v-btn></v-col></v-row
+    <v-row
+      align="center"
+      v-touch="{ left: () => next(), right: () => previous() }"
+    >
+      <v-btn v-on:click="previous()" icon="mdi-chevron-left"></v-btn>
+
+      <v-img :src="this.images[this.index]" width="65vw" aspect-radio="16/9" />
+
+      <v-btn v-on:click="next()" icon="mdi-chevron-right"></v-btn></v-row
   ></v-overlay>
 </template>
 

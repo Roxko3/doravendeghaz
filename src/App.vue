@@ -91,13 +91,11 @@
         <v-row>
           <v-col>
             <v-window v-model="tab">
-              <v-window-item value="home" class="h"> <Home /> </v-window-item>
+              <v-window-item value="home"> <Home /> </v-window-item>
               <v-window-item value="map" class="h"> <Map /> </v-window-item>
-              <v-window-item value="price" class="h"> <Prices /></v-window-item>
+              <v-window-item value="price"> <Prices /></v-window-item>
               <v-window-item value="image" class="h"> <Image /> </v-window-item>
-              <v-window-item value="contact" class="h">
-                <Contact
-              /></v-window-item>
+              <v-window-item value="contact"> <Contact /></v-window-item>
             </v-window>
           </v-col> </v-row
       ></v-col>
