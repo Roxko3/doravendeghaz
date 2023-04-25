@@ -1,5 +1,11 @@
 <template>
-  <v-carousel v-model="number" cycle v-on:click="check($event)" height="100%">
+  <v-carousel
+    v-model="number"
+    cycle
+    v-on:click="check($event)"
+    height="100%"
+    show-arrows="hover"
+  >
     <v-carousel-item
       v-for="image in images"
       :src="image"

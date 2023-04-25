@@ -39,12 +39,12 @@
     <v-row class="r justify-center">
       <v-col class="c4" sm="1"></v-col>
       <v-col class="c1 img" sm="1"></v-col>
-      <v-col sm="8"> </v-col>
+      <v-col sm="8"></v-col>
       <v-col class="c1 img" sm="1"></v-col>
       <v-col class="c4" sm="1"></v-col>
     </v-row>
     <v-row class="r justify-center">
-      <v-col class="c3" sm="10"></v-col>
+      <v-col class="c3" sm="10"> </v-col>
     </v-row>
     <v-row class="justify-center">
       <v-col class="c4" sm="1"></v-col>
@@ -90,7 +90,7 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-window v-model="tab">
+            <v-window v-model="tab" :touch="{ left: null, right: null }">
               <v-window-item value="home"> <Home /> </v-window-item>
               <v-window-item value="map" class="h"> <Map /> </v-window-item>
               <v-window-item value="price"> <Prices /></v-window-item>
@@ -244,7 +244,7 @@ export default defineComponent({
 
 .img {
   padding: 0;
-  max-width: 50px;
+  max-width: 10px;
 }
 .c1 {
   background-image: url("../../public/wood.jpg");
@@ -262,7 +262,7 @@ export default defineComponent({
 }
 .c4 {
   padding: 0;
-  max-width: 50px;
+  max-width: 10px;
 }
 .div {
   position: fixed;

@@ -1,6 +1,7 @@
 <template>
   <v-row class="justify-center">
-    <v-col cols="12" lg="6" md="8" sm="9" class="text-body-1">
+    <img src="../../public/adjpg.jpg" />
+    <v-col cols="12" lg="5" class="text-body-1">
       Kőszeg belvárosában 1767-ben épült műemlék épületben a földszinten lett
       kialakítva egy 50m² -es apartman, mely két egybenyíló boltíves szobából,
       felszerelt konyhából ( kávé főző, mikró,hűtő vízforraló,elektromos tűzhely
@@ -11,6 +12,17 @@
       alkalmazkodni másokhoz. Az érkezést-távozást rugalmasan kezeljük, ahogy a
       foglalások lehetővé teszik. Autóval érkező vendégeinknek ingyenes
       parkolóbérletet biztosítunk.
+    </v-col>
+    <v-col cols="12" lg="5" class="text-body-1">
+      Kedvezményezett neve: Dóráné Gyarmati Tünde Támogatási projekt címe:
+      Kisfaludy Szálláshelyfejlesztési Konstukció - magánszálláshelyek és egyéb
+      szálláshelyek fejlesztése Pályázat azonosító száma: TFC-M-1.1.2-2020-15177
+      Szerződött támogatás összege: 500.000,-Ft A támogatás mértéke: 100 % A
+      támogatott projekt tartalmának bemutatása: vendégházban található
+      étkező,konyha, fürdőszoba burkolatainak teljes felújítása, cseréje,
+      ablakok, bejárati ajtó cseréje. A támogatott projekt befejezési dátuma:
+      2021.03.31 „ A támogatott projekt a Kisfaludy Turisztika Fejlesztési
+      program keretében valósul meg” NTAK regisztrációs szám: MA19008454
     </v-col>
   </v-row>
   <!--<img src="../../public/haz.jpg" />
@@ -36,6 +48,6 @@
   padding: 10px;
 }
 img {
-  width: 100%;
+  width: 80%;
 }
 </style>
