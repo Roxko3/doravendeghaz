@@ -38,7 +38,7 @@
     >
       <v-btn v-on:click="previous()" icon="mdi-chevron-left"></v-btn>
 
-      <v-img :src="this.images[this.index]" width="65vw" aspect-radio="16/9" />
+      <v-img :src="this.images[this.index]" width="auto" aspect-radio="16/9" />
 
       <v-btn v-on:click="next()" icon="mdi-chevron-right"></v-btn></v-row
   ></v-overlay>

@@ -33,7 +33,7 @@
   <div class="div">
     <v-row class="justify-center">
       <v-col sm="10" cols="12" class="pb-0 mt-2">
-        <div class="title text-h4">Dóra Vendégház Kőszeg</div>
+        <div class="title"></div>
       </v-col>
     </v-row>
     <v-row class="r justify-center">
@@ -113,24 +113,6 @@
       <v-col class="c4" sm="1"></v-col>
     </v-row>
   </div>
-
-  <v-dialog v-model="isOpen" class="dialog" width="auto">
-    <img src="../public/adjpg.jpg" />
-    Kedvezményezett neve: Dóráné Gyarmati Tünde Támogatási projekt címe:
-    Kisfaludy Szálláshelyfejlesztési Konstukció - magánszálláshelyek és egyéb
-    szálláshelyek fejlesztése Pályázat azonosító száma: TFC-M-1.1.2-2020-15177
-    Szerződött támogatás összege: 500.000,-Ft A támogatás mértéke: 100 % A
-    támogatott projekt tartalmának bemutatása: vendégházban található
-    étkező,konyha, fürdőszoba burkolatainak teljes felújítása, cseréje, ablakok,
-    bejárati ajtó cseréje. A támogatott projekt befejezési dátuma: 2021.03.31 „
-    A támogatott projekt a Kisfaludy Turisztika Fejlesztési program keretében
-    valósul meg”
-  </v-dialog>
-  <v-layout>
-    <v-navigation-drawer v-model="drawer" location="top" temporary>
-      asd
-    </v-navigation-drawer>
-  </v-layout>
 </template>
 
 <script>
@@ -153,7 +135,6 @@ export default defineComponent({
   },
   data() {
     return {
-      isOpen: false,
       drawer: false,
       tab: null,
       windowWidth: window.innerWidth,
@@ -181,9 +162,6 @@ export default defineComponent({
   methods: {
     onResize() {
       this.windowWidth = window.innerWidth;
-    },
-    openDialog() {
-      this.isOpen = true;
     },
     openDrawer() {
       this.drawer = true;
@@ -244,7 +222,9 @@ export default defineComponent({
 
 .img {
   padding: 0;
-  max-width: 10px;
+  max-width: 50px;
+  border-left: outset;
+  border-right: outset;
 }
 .c1 {
   background-image: url("../../public/wood.jpg");
@@ -262,7 +242,7 @@ export default defineComponent({
 }
 .c4 {
   padding: 0;
-  max-width: 10px;
+  max-width: 50px;
 }
 .div {
   position: fixed;
