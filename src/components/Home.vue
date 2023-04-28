@@ -105,14 +105,14 @@
       valósul meg”
     </p>-->
 
-  <v-dialog v-model="isOpen" class="dialog" width="auto">
+  <v-dialog v-model="isOpen" class="dialog">
     <img src="../../public/adjpg.jpg" />
     <v-list density="compact">
       <v-list-item>
         <v-list-item-title>Kedvezményezett neve</v-list-item-title>
         <v-list-item-subtitle>Dóráné Gyarmati Tünde</v-list-item-subtitle>
       </v-list-item>
-      <v-list-item lines="two">
+      <v-list-item lines="three">
         <v-list-item-title>Támogatási projekt címe</v-list-item-title>
         <v-list-item-subtitle>
           Kisfaludy Szálláshelyfejlesztési Konstukció - magánszálláshelyek és
@@ -131,7 +131,7 @@
         <v-list-item-title>A támogatás mértéke</v-list-item-title>
         <v-list-item-subtitle>100 %</v-list-item-subtitle>
       </v-list-item>
-      <v-list-item lines="two">
+      <v-list-item lines="three">
         <v-list-item-title
           >A támogatott projekt tartalmának bemutatása</v-list-item-title
         >
@@ -149,11 +149,6 @@
       </v-list-item>
     </v-list>
   </v-dialog>
-  <v-layout>
-    <v-navigation-drawer v-model="drawer" location="top" temporary>
-      asd
-    </v-navigation-drawer>
-  </v-layout>
 </template>
 
 <script>
