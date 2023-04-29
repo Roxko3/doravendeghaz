@@ -33,7 +33,7 @@
   <div class="div">
     <v-row class="justify-center">
       <v-col sm="10" cols="12" class="pb-0 mt-2">
-        <div class="title"></div>
+        <!--<div class="title"></div>-->
       </v-col>
     </v-row>
     <v-row class="r justify-center">
