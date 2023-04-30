@@ -218,11 +218,11 @@ export default defineComponent({
   background: red;
 }
 .dialog {
-  background-image: url("../public/tornpaper.png");
+  background-image: url("/tornpaper.png");
   background-size: cover;
 }
 .page {
-  background-image: url("../../public/haz.jpg");
+  background-image: url("/haz.jpg");
 }
 .footer {
   position: relative;
@@ -250,7 +250,7 @@ export default defineComponent({
   border-right-color: black;
 }
 .c1 {
-  background-image: url("../public/images.jpg");
+  background-image: url("/images.jpg");
   background-repeat: repeat;
 }
 .c2 {
@@ -261,7 +261,7 @@ export default defineComponent({
   );
 }
 .c3 {
-  background-image: url("../public/images.jpg");
+  background-image: url("/images.jpg");
   background-repeat: repeat;
   border-radius: 15px;
   border-style: outset;
@@ -289,7 +289,7 @@ export default defineComponent({
 
   width: 100%;
   height: 100%;
-  background-image: url("../../public/haz.jpg");
+  background-image: url("/haz.jpg");
   background-size: cover;
 
   overflow: hidden;

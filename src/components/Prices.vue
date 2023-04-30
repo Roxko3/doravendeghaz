@@ -32,18 +32,44 @@
       </v-card></v-col
     >
   </v-row>-->
-  <!-- masodik verzio test
-    <v-row class="justify-center">
-    <v-col v-for="t in tomb" cols="12" sm="6" lg="3">
-      <v-card :append-icon="t.icon">
+
+  <v-row class="justify-center">
+    <v-col v-for="t in tomb" cols="12" sm="6" lg="3" align="center">
+      <v-card variant="tonal">
+        <v-img :src="t.image"></v-img>
+        <v-divider
+          :thickness="2"
+          color="teal-darken-4"
+          class="border-opacity-100"
+        ></v-divider>
+        <v-card-title class="text-center text-h5"
+          >{{ t.people }} fő</v-card-title
+        >
+        <v-card-text class="text-center text-h5">
+          {{ t.price }}.-Ft/éj</v-card-text
+        >
+      </v-card>
+      <!--<v-card :append-icon="t.icon">
         <template v-slot:title> {{ t.people }} fő</template>
         <template v-slot:text>
           <div class="text-h5">{{ t.price }}.-Ft / éj</div>
         </template>
-      </v-card>
+      </v-card>-->
     </v-col>
   </v-row>
   <v-row class="justify-center">
+    <v-col cols="12" lg="6">
+      <v-card append-icon="mdi-percent" variant="tonal">
+        <template v-slot:title
+          ><div class="text-h5">Kedvezmények</div></template
+        >
+        <template v-slot:text
+          ><div class="text-h6">Parkolási kedvezmény</div></template
+        >
+      </v-card>
+    </v-col>
+  </v-row>
+  <!--<v-row class="justify-center">
     <v-col cols="12" lg="6">
       <v-card
         title="Kedvezmények"
@@ -52,7 +78,7 @@
       ></v-card>
     </v-col>
   </v-row>-->
-  <v-row class="justify-center">
+  <!--  <v-row class="justify-center">
     <v-col cols="6">
       <v-icon v-if="value === 0" icon="mdi-account"></v-icon>
       <v-icon v-if="value === 1" icon="mdi-account-multiple"></v-icon>
@@ -67,7 +93,7 @@
         tick-size="4"
       ></v-slider>
     </v-col>
-  </v-row>
+  </v-row>-->
 </template>
 
 <script>
@@ -79,10 +105,30 @@ export default defineComponent({
     return {
       value: 0,
       tomb: [
-        { people: 1, price: 13000, icon: "mdi-account" },
-        { people: 2, price: 15000, icon: "mdi-account-multiple" },
-        { people: 3, price: 20000, icon: "mdi-account-multiple-plus" },
-        { people: 4, price: 25000, icon: "mdi-account-group" },
+        {
+          people: 1,
+          price: 13000,
+          icon: "mdi-account",
+          image: "/egy.png",
+        },
+        {
+          people: 2,
+          price: 15000,
+          icon: "mdi-account-multiple",
+          image: "/ketto.png",
+        },
+        {
+          people: 3,
+          price: 20000,
+          icon: "mdi-account-multiple-plus",
+          image: "/harom.png",
+        },
+        {
+          people: 4,
+          price: 25000,
+          icon: "mdi-account-group",
+          image: "/negy.png",
+        },
       ],
       tickLabels: {
         0: "1 fő",
