@@ -1,11 +1,17 @@
 <template>
-  <v-row class="justify-center"
+  <!--<v-row class="justify-center"
     ><v-col cols="12" lg="6" md="8" sm="10" class="text-h3" align="center"
       >Dóra Vendégház Kőszeg</v-col
     ></v-row
-  >
+  >-->
   <v-row class="justify-center">
-    <v-col cols="12" lg="6" md="8" sm="10" class="text-h6" align="justify">
+    <v-col
+      cols="12"
+      lg="8"
+      md="10"
+      :class="{ 'text-subtitle-1': mobile, 'text-h6': !mobile }"
+      align="justify"
+    >
       <!--<img src="../../public/adjpg.jpg" /><br />-->
       Kőszeg belvárosában 1767-ben épült műemlék épületben a földszinten lett
       kialakítva egy 50m² -es apartman, mely két egybenyíló boltíves szobából,
@@ -156,6 +162,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Home",
+  props: ["mobile"],
   data() {
     return {
       isOpen: false,

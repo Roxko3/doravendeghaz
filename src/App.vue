@@ -33,7 +33,13 @@
   <v-app>
     <div class="div">
       <v-row class="justify-center">
-        <v-col sm="10" cols="12" class="pb-0 mt-2">
+        <v-col
+          sm="10"
+          cols="12"
+          :class="{ 'text-h3': !isMobile, 'text-h4': isMobile, test: true }"
+          align="center"
+        >
+          Dóra Vendégház Kőszeg
           <!--<div class="title"></div>-->
         </v-col>
       </v-row>
@@ -71,7 +77,7 @@
             <router-link to="/images"><v-btn>Képek</v-btn></router-link>
           </v-col>-->
             <v-col class="tab">
-              <v-btn v-if="isMobile" v-on:click="btnClick" block
+              <v-btn variant="tonal" v-if="isMobile" v-on:click="btnClick" block
                 >Navigáció<v-icon>{{
                   tabOpen ? "mdi-chevron-up" : "mdi-chevron-down"
                 }}</v-icon></v-btn
@@ -98,15 +104,23 @@
             </v-col>
           </v-row>
           <v-row>
-            <v-col>
+            <v-col class="pa-0">
               <v-window v-model="tab" :touch="{ left: null, right: null }">
-                <v-window-item value="home"> <Home /> </v-window-item>
-                <v-window-item value="map" class="h"> <Map /> </v-window-item>
-                <v-window-item value="price"> <Prices /></v-window-item>
+                <v-window-item value="home" class="pa-6">
+                  <Home :mobile="isMobile" />
+                </v-window-item>
+                <v-window-item value="map" class="h">
+                  <Map />
+                </v-window-item>
+                <v-window-item value="price" class="pa-6">
+                  <Prices
+                /></v-window-item>
                 <v-window-item value="image" class="h">
                   <Image />
                 </v-window-item>
-                <v-window-item value="contact"> <Contact /></v-window-item>
+                <v-window-item value="contact" class="pa-6">
+                  <Contact
+                /></v-window-item>
               </v-window>
             </v-col> </v-row
         ></v-col>
@@ -208,8 +222,16 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.test {
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
+  background-image: url("/images.jpg");
+  background-repeat: repeat;
+  border: outset;
+  text-shadow: 0 1px 0 saddlebrown;
+}
 .h {
-  height: 73vh;
+  height: 69vh;
 }
 .tab {
   padding: 0;
