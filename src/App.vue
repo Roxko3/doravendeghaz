@@ -30,44 +30,42 @@
       </v-row>
     </v-footer>
   </v-app>-->
-  <v-app>
-    <div class="div">
-      <v-row class="justify-center">
-        <v-col
-          sm="10"
-          cols="12"
-          :class="{ 'text-h3': !isMobile, 'text-h4': isMobile, test: true }"
-          align="center"
-        >
-          Dóra Vendégház Kőszeg
-          <!--<div class="title"></div>-->
-        </v-col>
-      </v-row>
-      <v-row class="r justify-center">
-        <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
-        <v-col
-          :class="{ c1: true, img: !isMobile, mobil: isMobile }"
-          sm="1"
-        ></v-col>
-        <v-col sm="8"></v-col>
-        <v-col
-          :class="{ c1: true, img: !isMobile, mobil: isMobile }"
-          sm="1"
-        ></v-col>
-        <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
-      </v-row>
-      <v-row class="r justify-center">
-        <v-col class="c3" sm="10"> </v-col>
-      </v-row>
-      <v-row class="justify-center">
-        <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
-        <v-col
-          :class="{ c1: true, img: !isMobile, mobil: isMobile }"
-          sm="1"
-        ></v-col>
-        <v-col sm="8" class="c2">
-          <v-row>
-            <!--<v-col v-if="false" align="center">
+  <v-app class="div">
+    <v-row class="justify-center">
+      <v-col
+        sm="10"
+        cols="12"
+        :class="{ 'text-h3': !isMobile, 'text-h4': isMobile, test: true }"
+        align="center"
+      >
+        Dóra Vendégház Kőszeg
+      </v-col>
+    </v-row>
+    <v-row class="r justify-center">
+      <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
+      <v-col
+        :class="{ c1: true, img: !isMobile, mobil: isMobile }"
+        sm="1"
+      ></v-col>
+      <v-col sm="8"></v-col>
+      <v-col
+        :class="{ c1: true, img: !isMobile, mobil: isMobile }"
+        sm="1"
+      ></v-col>
+      <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
+    </v-row>
+    <v-row class="r justify-center">
+      <v-col class="c3" sm="10"></v-col>
+    </v-row>
+    <v-row class="justify-center">
+      <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
+      <v-col
+        :class="{ c1: true, img: !isMobile, mobil: isMobile }"
+        sm="1"
+      ></v-col>
+      <v-col sm="8" class="c2">
+        <v-row>
+          <!--<v-col v-if="false" align="center">
             <router-link to="/"
               ><v-btn class="active">Kezdő oldal</v-btn></router-link
             >
@@ -76,77 +74,76 @@
             <router-link to="/prices"><v-btn>Árak</v-btn></router-link>
             <router-link to="/images"><v-btn>Képek</v-btn></router-link>
           </v-col>-->
-            <v-col class="tab">
-              <v-btn variant="tonal" v-if="isMobile" v-on:click="btnClick" block
-                >Navigáció<v-icon>{{
-                  tabOpen ? "mdi-chevron-up" : "mdi-chevron-down"
-                }}</v-icon></v-btn
+          <v-col class="tab">
+            <v-btn variant="tonal" v-if="isMobile" v-on:click="btnClick" block
+              >Navigáció<v-icon>{{
+                tabOpen ? "mdi-chevron-up" : "mdi-chevron-down"
+              }}</v-icon></v-btn
+            >
+            <v-expand-transition>
+              <v-tabs
+                v-model="tab"
+                grow
+                :direction="dir"
+                show-arrows
+                v-if="tabOpen || !isMobile"
               >
-              <v-expand-transition>
-                <v-tabs
-                  v-model="tab"
-                  grow
-                  :direction="dir"
-                  show-arrows
-                  v-if="tabOpen || !isMobile"
-                >
-                  <v-tab value="home"
-                    >Kezdő oldal <v-icon icon="mdi-home"
-                  /></v-tab>
-                  <v-tab value="map">Térkép <v-icon icon="mdi-map" /></v-tab>
-                  <v-tab value="price">Árak <v-icon icon="mdi-cash" /></v-tab>
-                  <v-tab value="image">Képek <v-icon icon="mdi-image" /></v-tab>
-                  <v-tab value="contact"
-                    >Elérhetőség <v-icon icon="mdi-contacts"
-                  /></v-tab>
-                </v-tabs>
-              </v-expand-transition>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col class="pa-0">
-              <v-window v-model="tab" :touch="{ left: null, right: null }">
-                <v-window-item value="home" class="pa-6">
-                  <Home :mobile="isMobile" />
-                </v-window-item>
-                <v-window-item value="map" class="h">
-                  <Map />
-                </v-window-item>
-                <v-window-item value="price" class="pa-6">
-                  <Prices
-                /></v-window-item>
-                <v-window-item value="image" class="h">
-                  <Image />
-                </v-window-item>
-                <v-window-item value="contact" class="pa-6">
-                  <Contact
-                /></v-window-item>
-              </v-window>
-            </v-col> </v-row
-        ></v-col>
-        <v-col
-          :class="{ c1: true, img: !isMobile, mobil: isMobile }"
-          sm="1"
-        ></v-col>
-        <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
-      </v-row>
-      <v-row class="r justify-center">
-        <v-col class="c3" sm="10"></v-col>
-      </v-row>
-      <v-row class="row justify-center">
-        <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
-        <v-col
-          :class="{ c1: true, img: !isMobile, mobil: isMobile }"
-          sm="1"
-        ></v-col>
-        <v-col sm="8"> </v-col>
-        <v-col
-          :class="{ c1: true, img: !isMobile, mobil: isMobile }"
-          sm="1"
-        ></v-col>
-        <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
-      </v-row>
-    </div>
+                <v-tab value="home"
+                  >Kezdő oldal <v-icon icon="mdi-home"
+                /></v-tab>
+                <v-tab value="map">Térkép <v-icon icon="mdi-map" /></v-tab>
+                <v-tab value="price">Árak <v-icon icon="mdi-cash" /></v-tab>
+                <v-tab value="image">Képek <v-icon icon="mdi-image" /></v-tab>
+                <v-tab value="contact"
+                  >Elérhetőség <v-icon icon="mdi-contacts"
+                /></v-tab>
+              </v-tabs>
+            </v-expand-transition>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class="pa-0">
+            <v-window v-model="tab" :touch="{ left: null, right: null }">
+              <v-window-item value="home" class="pa-6">
+                <Home :mobile="isMobile" />
+              </v-window-item>
+              <v-window-item value="map" class="h">
+                <Map />
+              </v-window-item>
+              <v-window-item value="price" class="pa-6">
+                <Prices
+              /></v-window-item>
+              <v-window-item value="image" class="h">
+                <Image />
+              </v-window-item>
+              <v-window-item value="contact" class="pa-6">
+                <Contact
+              /></v-window-item>
+            </v-window>
+          </v-col> </v-row
+      ></v-col>
+      <v-col
+        :class="{ c1: true, img: !isMobile, mobil: isMobile }"
+        sm="1"
+      ></v-col>
+      <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
+    </v-row>
+    <v-row class="r justify-center">
+      <v-col class="c3" sm="10"></v-col>
+    </v-row>
+    <v-row class="row justify-center">
+      <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
+      <v-col
+        :class="{ c1: true, img: !isMobile, mobil: isMobile }"
+        sm="1"
+      ></v-col>
+      <v-col sm="8"> </v-col>
+      <v-col
+        :class="{ c1: true, img: !isMobile, mobil: isMobile }"
+        sm="1"
+      ></v-col>
+      <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
+    </v-row>
   </v-app>
 </template>
 
@@ -287,11 +284,6 @@ export default defineComponent({
   background-repeat: repeat;
   border-radius: 15px;
   border-style: outset;
-  border-top-color: black;
-  border-left-color: black;
-  border-right-color: black;
-  border-bottom-color: black;
-  height: 40px;
 }
 .c4 {
   padding: 0;
