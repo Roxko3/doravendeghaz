@@ -31,7 +31,7 @@
     </v-footer>
   </v-app>-->
   <v-app class="div">
-    <v-row class="justify-center">
+    <v-row class="justify-center" align="end">
       <v-col
         sm="10"
         cols="12"
@@ -41,7 +41,7 @@
         Dóra Vendégház Kőszeg
       </v-col>
     </v-row>
-    <v-row class="r justify-center">
+    <v-row class="justify-center mw">
       <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
       <v-col
         :class="{ c1: true, img: !isMobile, mobil: isMobile }"
@@ -54,7 +54,7 @@
       ></v-col>
       <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
     </v-row>
-    <v-row class="r justify-center">
+    <v-row class="justify-center mw">
       <v-col class="c3" sm="10"></v-col>
     </v-row>
     <v-row class="justify-center">
@@ -75,19 +75,13 @@
             <router-link to="/images"><v-btn>Képek</v-btn></router-link>
           </v-col>-->
           <v-col class="tab">
-            <v-btn variant="tonal" v-if="isMobile" v-on:click="btnClick" block
+            <v-btn variant="tonal" v-if="false" v-on:click="btnClick" block
               >Navigáció<v-icon>{{
                 tabOpen ? "mdi-chevron-up" : "mdi-chevron-down"
               }}</v-icon></v-btn
             >
             <v-expand-transition>
-              <v-tabs
-                v-model="tab"
-                grow
-                :direction="dir"
-                show-arrows
-                v-if="tabOpen || !isMobile"
-              >
+              <v-tabs v-model="tab" grow show-arrows v-if="true">
                 <v-tab value="home"
                   >Kezdő oldal <v-icon icon="mdi-home"
                 /></v-tab>
@@ -128,7 +122,7 @@
       ></v-col>
       <v-col :class="{ c4: !isMobile, mobil: isMobile }" sm="1"></v-col>
     </v-row>
-    <v-row class="r justify-center">
+    <v-row class="justify-center mw">
       <v-col class="c3" sm="10"></v-col>
     </v-row>
     <v-row class="row justify-center">
@@ -219,6 +213,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.mw {
+  max-height: 40px;
+}
 .test {
   border-top-left-radius: 90px;
   border-top-right-radius: 90px;
